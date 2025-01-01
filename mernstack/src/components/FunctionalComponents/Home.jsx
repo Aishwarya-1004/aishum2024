@@ -1,13 +1,16 @@
-
-
-
-const Home = () => {
-    return (
-        <section className="home-section">
-            <h1>This is my Home Page</h1>
-        
-        </section>
+import '../../assets/css/Home.css';
+const Home=()=>{
+    const styling={
+        fontsize:"30px",
+        textDecoration:"underline",
+        color:"red"
+    }
+    return(
+        <div className="box-model"> 
+            <h1 id="idSEg">Fullstack Training </h1>
+            <h2 style={{color:"blue"}}>Day 4</h2>
+            <h3 style={styling}>CSS Styling</h3>
+        </div>
     );
 }
-
 export default Home;

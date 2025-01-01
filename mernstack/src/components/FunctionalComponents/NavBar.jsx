@@ -1,20 +1,23 @@
+
 import '../../assets/css/NavBar.css';
-
-const NavBar = () => {
-    const styling = {
-        fontSize: "30px",
-        color: "blue",
-        textDecoration: "underline" // Corrected camelCase
-    };
-    return (
+import { Link } from "react-router-dom";
+const NavBar=()=>{
+    return(
         <header>
-            <h1 style={styling}>KONGU ENGINEERING COLLEGE,PERUNDURAI</h1>
-            <h2 id="idSEsg">DEPARTMENT OF CSE</h2>
-            <p className='box-model'>
-                ishhutaraa - 22CSR91
-            </p>
-        </header>
-    );
-}
+            <nav>
+                <ul>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/gallery">gallery</Link></li>
+                    <li><Link to="/useRef">UseRef</Link></li>
+                    <li><Link to="/useContext">UseContext</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/useEffect">UseEffect</Link></li>
+       
 
+                </ul>
+            </nav>
+        </header>
+    )
+}
 export default NavBar;

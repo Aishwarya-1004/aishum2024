@@ -1,13 +1,21 @@
-.box-model{
-    font-size: 50px;
-    margin: 5px;
-    border: 10px solid grey;
-    padding: 10px;
-
+ul{
+    padding:0;
+    display:flex;
+    margin:0;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style-type: none;
+    background-color: chocolate;
+    color: rgb(255, 240, 254);
+    
 }
-
-#idSEsg{
-    color:red;
-    text-align: center;
-    text-decoration: underline;
+li{
+    cursor: pointer;
+    padding:3px;
+}
+li:hover{
+    background-color: rgb(180, 190, 31);
+    color: chocolate;
+    padding:3px;
+    border-radius:10px;
 }
