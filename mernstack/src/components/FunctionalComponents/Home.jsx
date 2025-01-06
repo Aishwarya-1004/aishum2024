@@ -1,4 +1,4 @@
-import '../css/Home.css';
+import './css/Home.css';
 const Home=()=>{
     const styling={
         fontsize:"50px",
