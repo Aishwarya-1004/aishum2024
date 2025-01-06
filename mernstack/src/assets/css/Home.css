@@ -1,11 +1,31 @@
-.box-model{
-    width: 300px;
-    border: 10px solid green;
-    padding: 100px;
-    margin: 100px;
-    background-color: rgb(82, 68, 210)
-  
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%;
+    height: 100vh; /* Ensure it covers the full viewport height */
+    background-image: url('https://www.hdwallpapers.in/download/goku_anime_boy_dark_art_black_background_4k_hd_dragon_ball-1920x1080.jpg'); /* Background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-color: rgb(168, 21, 21); /* Fallback background color */
 }
-#idSEg{
-text-align: center;
+
+/* Adjust the box styles to float on top of the background */
+.box-model {
+    width: 100%;
+    max-width: 1200px;
+    border: 5px solid skyblue;
+    padding: 80px;
+    margin: 50px auto; /* Add extra margin for better spacing */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: skyblue;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#idSEg {
+    text-align: center;
+    color: skyblue;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

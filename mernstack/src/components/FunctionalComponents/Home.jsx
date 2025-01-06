@@ -1,15 +1,15 @@
 import '../../assets/css/Home.css';
 const Home=()=>{
     const styling={
-        fontsize:"30px",
+        fontsize:"50px",
         textDecoration:"underline",
-        color:"red"
+        color:"orange"
     }
     return(
         <div className="box-model"> 
-            <h1 id="idSEg">Fullstack Training </h1>
-            <h2 style={{color:"blue"}}>Day 4</h2>
-            <h3 style={styling}>CSS Styling</h3>
+            <h1 id="idSEg" style={{color:"red"}}>손오공이 당신을 환영합니다</h1>
+            <h2 style={{color:"red"}}>しっかりしろ</h2>
+            
         </div>
     );
 }

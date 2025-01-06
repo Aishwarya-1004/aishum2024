@@ -10,8 +10,10 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import UseEffect from "./components/FunctionalComponents/UseEffect";
 import UseRef from "./components/FunctionalComponents/UseRef";
 import UseContext from "./components/FunctionalComponents/UseContext";
+import UseMemo from "./components/FunctionalComponents/UseMemo";
 import Footer from './components/FunctionalComponents/footer';
-
+import SignUp from './components/FunctionalComponents/signup';
+import Login from './components/FunctionalComponents/login';
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
         <Route path="/useEffect" element={<UseEffect />} />
         <Route path="/useRef" element={<UseRef />} />
         <Route path="/useContext" element={<UseContext />} />
+        <Route path="/useMemo" element={<UseMemo />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         
       </Routes>
       <Footer/>

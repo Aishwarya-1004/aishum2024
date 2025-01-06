@@ -1,11 +1,16 @@
-const express = require('express');
-const path = require('path');
-const mdb = require('mongoose');
-const User=require('./models/users');
-const app = express();
+var express = require('express');
+var path = require('path');
+var mdb = require('mongoose');
+var cors=require('cors');
+var User=require('./models/users');
+var app = express();
+var env=require('dotenv')
 const PORT = 3001;
+env.config()
 app.use(express.json())
-mdb.connect("mongodb://localhost:27017/").then(() => {
+app.use(cors());
+mdb.connect(process.env.MONGO_URL).then(() => {
+    console.log(process.env.MONGO_URL)
     console.log("MongoDB Connection Successful")
 }).catch(() => {
     console.log("Check your connection String")
@@ -54,13 +59,13 @@ app.post('/signup',(req,res)=>{
  })
  app.post('/login',async(req,res)=>
 {
-    const {email,password}=req.body
+    var {email,password}=req.body
     try{
-        const existinguser=await User.findOne({email:email})
+        var existinguser=await User.findOne({email:email})
         console.log(existinguser);
         if(existinguser)
         {
-            if(existinguser.password==password){
+            if(existinguser.password===password){
         res.json({message:"Login successful",loggedIn:true})
             }
             else{
@@ -81,3 +86,5 @@ app.post('/signup',(req,res)=>{
  app.listen(PORT, () => {
      console.log(`backend server started\nUrl: http://localhost:${PORT}`);
  });
+ 
+ 
