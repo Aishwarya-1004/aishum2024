@@ -1,80 +1,47 @@
-import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import axios from 'axios'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const [errors, setErrors] = useState({});
- const navigate = useNavigate();
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [email, setemail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.email) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Invalid email format";
-    if (!formData.password) newErrors.password = "Password is required";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validate()) {
-      return;
+  var login = async (event) => {
+    event.preventDefault()
+    var req = await axios.post("http://localhost:3001/login", {
+      email,
+      password
+    })
+    console.log(req.data)
+    var isLoginSuccessful = req.data.isloggedIn
+    var message = req.data.message
+    alert(message)
+    if(isLoginSuccessful)
+    {
+      navigate('/')
     }
-
-    try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email: formData.email,
-        password: formData.password,
-      });
-
-      console.log("Login Successful:", response.data);
-      alert("Login Successful");
-
-      navigate("/usememo");
-      // Perform further actions like redirecting to another page
-    } catch (error) {
-      console.error("Error during login:", error);
-      alert("Login failed. Please check your credentials.");
+    else{
+      console.log(message, "hey")
     }
-  };
+    console.log(isLoginSuccessful)
+  }
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
-        </div>
-        <button type="submit">Login</button>
+    <div>
+      <form>
+        <br />
+        <input type="text" placeholder='email' value={email} onChange={(e) => setemail(e.target.value)} required/>
+        <br /><br />
+        <input type="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
+        <br /><br />
+        <button type="reset">Reset</button>
+        <br /><br />
+        <button type="submit" onClick={login}>Login</button>
+        <br /><br />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
