@@ -12,8 +12,8 @@ import UseRef from "./components/FunctionalComponents/UseRef";
 import UseContext from "./components/FunctionalComponents/UseContext";
 import UseMemo from "./components/FunctionalComponents/UseMemo";
 import Footer from './components/FunctionalComponents/footer';
-import SignUp from './components/FunctionalComponents/signup';
-import Login from './components/FunctionalComponents/login';
+import SignUp from './components/FunctionalComponents/SignUp';
+import Login from './components/FunctionalComponents/Login';
 
 
 function App() {
