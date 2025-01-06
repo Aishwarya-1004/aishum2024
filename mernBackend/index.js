@@ -1,10 +1,10 @@
 var express = require('express');
 var path = require('path');
 var mdb = require('mongoose');
-var cors=require('cors');
-var User=require('./models/users');
+var cors = require('cors');
+var User = require('./models/users');
 var app = express();
-var env=require('dotenv')
+var env = require('dotenv')
 const PORT = 3001;
 env.config()
 app.use(express.json())
