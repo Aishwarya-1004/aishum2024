@@ -4,8 +4,6 @@ import Home from "./components/FunctionalComponents/Home";
 import About from "./components/FunctionalComponents/About";
 import Gallery from "./components/FunctionalComponents/Gallery";
 import NavBar from "./components/FunctionalComponents/NavBar";
-import "./assets/css/Home.css";
-import "./assets/css/NavBar.css";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import UseEffect from "./components/FunctionalComponents/UseEffect";
 import UseRef from "./components/FunctionalComponents/UseRef";
